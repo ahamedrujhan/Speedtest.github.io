@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Internet Speed Monitoring</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+      #map {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
+    </style>
+  </head>
+  <body>
+    <div id="map">
+    </div>
+    <script>
+      var map = L.map('map', {
+    center: [7.8731, 80.7718],
+    zoom: 8
+});
+      L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=MknJr7SP8mqg9FUn0IaE',{
+          attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+      }).addTo(map);
+      
+      L.tileLayer.wms("http://basemap.nationalmap.gov/ArcGIS/services/USGSImageryTopo/MapServer/WMSServer", {
+   layers:'0',
+   format: 'image/png',
+   transparent: true,
+   attribution: "USGS"
+   }).addTo(map);
+      var marker = L.marker([7.9403, 81.0188], {
+          title: "Polonnaruwa",
+      }).addTo(map).bindPopup("<h1> Polonnaruwa</h1><p><li> Average Upload Speed=28.84 Mb/s</li><br><li> Average Download Speed=16.97 Mb/s </li><br><li> Average Bandwidth=123 Mbps</li> ");
+      
+      var marker = L.marker([7.3018, 81.6747], {
+          title: "Ampara",
+      }).addTo(map).bindPopup("<h1> Ampara </h1><p><li> Average Upload Speed=1.06 Mb/s</li><br><li> Average Download Speed=0.53 Mb/s </li><br><li> Average Bandwidth=38 Mbps</li> </p> ");
+      
+      var marker = L.marker([8.3114, 80.4037], {
+          title: "Anuradhapura",
+      }).addTo(map).bindPopup("<h1> Anuradhapura </h1><p><li> Average Upload Speed=1.30 Mb/s</li><br><li> Average Download Speed=3.56 Mb/s </li><br><li> Average Bandwidth=300 Mbps</li> ");
+      
+      var marker = L.marker([6.9934, 81.0550], {
+          title: "Badulla",
+      }).addTo(map).bindPopup("<h1> Badulla</h1><p><li> Average Upload Speed=1.25 Mb/s</li><br><li> Average Download Speed=1.55 Mb/s </li><br><li> Average Bandwidth=300 Mbps</li> ");
+      
+      var marker = L.marker([7.7310, 81.6747], {
+          title: "Batticalao",
+      }).addTo(map).bindPopup("<h1> Batticalao</h1> <p><li> Average Upload Speed=3.10 Mb/s</li><br><li> Average Download Speed=10.00 Mb/s </li><br><li> Average Bandwidth=200 Mbps</li> ");
+
+      var marker = L.marker([6.9271, 79.8612], {
+          title: "Colombo",
+      }).addTo(map).bindPopup("<h1>Colombo</h1> <p><li> Average Upload Speed=11.06 Mb/s</li><br><li> Average Download Speed=17.80 Mb/s </li><br><li> Average Bandwidth=53.06 Mbps</li> ");
+      
+      var marker = L.marker([6.0535, 80.2210], {
+          title: "Galle",
+      }).addTo(map).bindPopup("<h1>Galle</h1> <p><li> Average Upload Speed=29.27 Mb/s</li><br><li> Average Download Speed=27.43 Mb/s </li><br><li> Average Bandwidth=39 Mbps</li>");
+      
+      var marker = L.marker([7.0840, 80.0098], {
+          title: "Gampaha",
+      }).addTo(map).bindPopup("<h1> Gampaha</h1> <p><li> Average Upload Speed=19.78 Mb/s</li><br><li> Average Download Speed=29.99 Mb/s </li><br><li> Average Bandwidth=57.5 Mbps</li> ");
+      
+      var marker = L.marker([6.1429, 81.1212], {
+          title: "Hambantota",
+      }).addTo(map).bindPopup("<h1> Hambantota </h1> <p><li> Average Upload Speed=1.07 Mb/s</li><br><li> Average Download Speed=0.97 Mb/s </li><br><li> Average Bandwidth=100 Mbps</li> ");
+
+      var marker = L.marker([9.6615, 80.0255], {
+          title: "Jaffna",
+      }).addTo(map).bindPopup("<h1> Jaffna </h1> <p> <li> Average Upload Speed=3.78 Mb/s</li><br><li> Average Download Speed=12.87 Mb/s </li><br><li> Average Bandwidth=63 Mbps</li> ");
+      
+      var marker = L.marker([6.5854, 79.9607], {
+          title: "Kalutara",
+      }).addTo(map).bindPopup("<h1> Kalutara </h1> <p><li> Average Upload Speed=0.45 Mb/s</li><br><li> Average Download Speed=7.58 Mb/s </li><br><li> Average Bandwidth=21 Mbps</li> ");
+      
+      var marker = L.marker([7.2906, 80.6337], {
+          title: "Kandy",
+      }).addTo(map).bindPopup("<h1> Kandy </h1> <p> <li> Average Upload Speed=0.15 Mb/s</li><br><li> Average Download Speed=3.37 Mb/s </li><br><li> Average Bandwidth=20 Mbps </li>");
+      
+      var marker = L.marker([7.2513, 80.3464], {
+          title: "Kegalle",
+      }).addTo(map).bindPopup("<h1>Kegalle </h1> <p><li> Average Upload Speed=3.77 Mb/s</li><br><li> Average Download Speed=1.99 Mb/s </li><br><li> Average Bandwidth=21.5 Mbps</li> ");
+
+      var marker = L.marker([9.3803, 80.3770], {
+          title: "Kilinochchi",
+      }).addTo(map).bindPopup("<h1>Kilinochchi</h1> <p><li> Average Upload Speed=1.14 Mb/s</li><br><li> Average Download Speed=9.78 Mb/s </li><br><li> Average Bandwidth=56 Mbps</li> ");
+     
+      var marker = L.marker([7.4818, 80.3609], {
+          title: "Kurunegala",
+      }).addTo(map).bindPopup("<h1>Kurunegala </h1> <p><li> Average Upload Speed=4.70 Mb/s</li><br><li> Average Download Speed=5.30 Mb/s </li><br><li> Average Bandwidth=36 Mbps</li> ");
+
+      var marker = L.marker([8.9810, 79.9044], {
+          title: "Mannar",
+      }).addTo(map).bindPopup("<h1> Mannar </h1> <p><li> Average Upload Speed=4.18 Mb/s</li><br><li> Average Download Speed=3.53 Mb/s </li><br><li> Average Bandwidth=27 Mbps</li> ");
+      
+      var marker = L.marker([7.4675, 80.6234], {
+          title: "Matale",
+      }).addTo(map).bindPopup("<h1> Matale </h1> <p><li> Average Upload Speed=7.6 Mb/s</li><br><li> Average Download Speed=15.4 Mb/s </li><br><li> Average Bandwidth=50 Mbps</li> ");
+      
+      var marker = L.marker([5.9549, 80.5550], {
+          title: "Matara",
+      }).addTo(map).bindPopup("<h1> Matara </h1> <p><li> Average Upload Speed=1.76 Mb/s</li><br><li> Average Download Speed=7.80 Mb/s </li><br><li> Average Bandwidth=75 Mbps</li> ");
+      
+      var marker = L.marker([6.8728, 81.3507], {
+          title: "Monaragala",
+      }).addTo(map).bindPopup("<h1>Monaragala </h1> <p> <li> Average Upload Speed=0.49 Mb/s</li><br><li> Average Download Speed=4.14 Mb/s </li><br><li> Average Bandwidth=300 Mbps</li> ");
+      
+      var marker = L.marker([9.2671, 80.8142], {
+          title: "Mullaitivu",
+      }).addTo(map).bindPopup("<h1>Mullaitivu </h1> <p> <li> Average Upload Speed=1.42 Mb/s</li><br><li> Average Download Speed=5.94 Mb/s </li><br><li> Average Bandwidth=21 Mbps</li> ");
+
+      var marker = L.marker([6.9497, 80.7891], {
+          title: "Nuwaraeliya",
+      }).addTo(map).bindPopup("<h1> Ampara </h1> <p> <li> Average Upload Speed=0.52 Mb/s</li><br><li> Average Download Speed=1.01 Mb/s </li><br><li> Average Bandwidth=3 Mbps</li> ");
+      
+      var marker = L.marker([8.0408, 79.8394], {
+          title: "Puttalam",
+      }).addTo(map).bindPopup("<h1>Puttalam </h1> <p> <li> Average Upload Speed=1.78 Mb/s</li><br><li> Average Download Speed=15.99 Mb/s </li><br><li> Average Bandwidth=16 Mbps</li> ");
+      
+      var marker = L.marker([6.7056, 80.3847], {
+          title: "Ratnapura",
+      }).addTo(map).bindPopup("<h1> Ratnapura </h1> <p> <li> Average Upload Speed=0.24 Mb/s</li><br><li> Average Download Speed=5.35 Mb/s </li><br><li> Average Bandwidth=300 Mbps</li>");
+
+      var marker = L.marker([8.5874, 81.2152], {
+          title: "Trincomalee",
+      }).addTo(map).bindPopup("<h1> Trincomalee </h1> <p> <li> Average Upload Speed=1.48 Mb/s</li><br><li> Average Download Speed=7.41 Mb/s </li><br><li> Average Bandwidth=14 Mbps</li> ");
+      
+      var marker = L.marker([8.7542, 80.4982], {
+          title: "Vavuniya",
+      }).addTo(map).bindPopup("<h1> Vavuniya </h1> <p> <li> Average Upload Speed=1.54 Mb/s</li><br><li> Average Download Speed=17.44 Mb/s </li><br><li> Average Bandwidth=28 Mbps</li> ");
+      var popup = L.popup()
+    .setLatLng([7.5739731, 80.6294482],)
+    .setContent('<p>Internet SPEED<br />MONITORING IN SRILANKA</p>')
+    .openOn(map);
+   
+     
+    </script>
+  </body>
+</html>
